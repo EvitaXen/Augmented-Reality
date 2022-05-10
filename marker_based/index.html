@@ -16,6 +16,56 @@
 
 <body style="margin : 0px; overflow: hidden;">
 
+    <!-- Marker distance -->
+
+    <script>
+
+        AFRAME.registerComponent("marker-distance", {
+            tick: function () {
+
+                this.markerDistance()
+            },
+            markerDistance: function () {
+
+                var marker1Pos, marker2Pos, d
+
+                d = marker1Pos.distanceTo(marker2Pos);
+
+                marker1Pos = new THREE.Vector3();
+                marker1.object3D.getWorldPosition(marker1Pos);
+
+                marker2Pos = new THREE.Vector3();
+                marker2.object3D.getWorldPosition(marker2Pos);
+
+
+                this.marker1 = document.querySelector("#oxMarker")
+                this.marker2 = document.querySelector("#hyMarker")
+                this.el1 = document.querySelector('#Ox')
+                this.el2 = document.querySelector('#Hy')
+                this.el3 = document.querySelector('#Water')
+
+                if (d < 2) {
+
+                    this.el1.setAttribute("visible", false)
+                    this.el2.setAttribute("visible", false)
+                    this.el3.setAttribute("visible", true)
+                }
+
+
+                else {
+
+                    this.el1.setAttribute("visible", true)
+                    this.el2.setAttribute("visible", true)
+                    this.el3.setAttribute("visible", false)
+
+                }
+
+            }
+
+        });
+
+    </script>
+
 
     <a-scene vr-mode-ui="enabled: false;"
              renderer="logarithmicDepthBuffer: true;"
@@ -74,66 +124,12 @@
                       animation__rotate="property: rotation; dur: 5000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;">
         </a-gltf-model>
 
-
-
-        <!-- Marker distance -->
-        <script>
-
-            AFRAME.registerComponent("marker-distance", {
-                tick: function () {
-
-                    this.markerDistance()
-                },
-                markerDistance: function () {
-
-                    var marker1Pos, marker2Pos, d
-
-                    d = marker1Pos.distanceTo(marker2Pos);
-
-                    marker1Pos = new THREE.Vector3();
-                    marker1.object3D.getWorldPosition(marker1Pos);
-
-                    marker2Pos = new THREE.Vector3();
-                    marker2.object3D.getWorldPosition(marker2Pos);
-
-
-                    this.marker1 = document.querySelector("#oxMarker")
-                    this.marker2 = document.querySelector("#hyMarker")
-                    this.el1 = document.querySelector('#Ox')
-                    this.el2 = document.querySelector('#Hy')
-                    this.el3 = document.querySelector('#Water')
-
-                    if (d < 2) {
-
-                        document.querySelector('#Ox').setAttribute('visible', false)
-                        document.querySelector('#Hy').setAttribute('visible', false)
-                        document.querySelector('#Water').setAttribute('visible', true)
-                    }
-
-
-                    else {
-
-                        document.querySelector('#Ox').setAttribute('visible', true)
-                        document.querySelector('#Hy').setAttribute('visible', true)
-                        document.querySelector('#Water').setAttribute('visible', false)
-                    }
-
-                }
-
-            });
-
-        </script>
-
-        <!-- ta dokimasa kai auta alla den
-            this.el1.setAttribute("visible", false)
-            this.el2.setAttribute("visible", false)
-            this.el3.setAttribute("visible", true) -->
-        <!--
-                    this.el1.setAttribute("visible", true)
-                    this.el2.setAttribute("visible", true)
-                    this.el3.setAttribute("visible", false)-->
+        <a-entity marker-distance></a-entity>
 
         <a-entity camera></a-entity>
+
     </a-scene>
+
 </body>
+
 </html>

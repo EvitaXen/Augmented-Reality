@@ -90,6 +90,10 @@
 
             markerDistance: function () {
 
+
+                var marker1 = document.querySelector("#oxMarker")
+                var marker2 = document.querySelector("#hyMarker")
+
                 var marker1Pos, marker2Pos
 
                 marker1Pos = new THREE.Vector3();
@@ -101,16 +105,40 @@
                 //distance
                 var markerDistance = marker1Pos.distanceTo(marker2Pos);
 
-                var marker1 = document.querySelector("#oxMarker")
-                var marker2 = document.querySelector("#hyMarker")
-
 
                 var entity1 = document.querySelector('#Ox')
                 var entity2 = document.querySelector('#Hy')
                 var entity3 = document.querySelector('#Water')
 
 
-                    if (markerDistance < 2) {
+                if (marker1Pos.object3D.visible == true || marker2Pos.object3D.visible == true) {
+
+                    entity1.setAttribute('visible', true)
+                    entity2.setAttribute('visible', true)
+                    entity3.setAttribute('visible', false)
+
+                }
+
+                else if (marker1Pos.object3D.visible == true && marker2Pos.object3D.visible == true && markerDistance < 2) {
+
+                    entity1.setAttribute('visible', false)
+                    entity2.setAttribute('visible', false)
+                    entity3.setAttribute('visible', true)
+                }
+
+                else (marker1Pos.object3D.visible == false || marker2Pos.object3D.visible == false)
+                {
+
+                    entity3.setAttribute('visible', false)
+                }
+
+            }
+        });
+
+    </script>
+
+    <!--
+            if (markerDistance < 2) {
 
                         entity1.setAttribute('visible', false)
                         entity2.setAttribute('visible', false)
@@ -125,11 +153,8 @@
                     entity3.setAttribute('visible', false)
 
                     }
+     -->
 
-            }
-        });
-
-    </script>
 
 </body>
 

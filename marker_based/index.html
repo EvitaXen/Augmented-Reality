@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
+
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     <!-- we import arjs version without NFT but with marker + location based support -->
     <!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
@@ -12,10 +15,52 @@
     <!-- speech command component -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
     <script src="build/aframe-speech-command-component.js"></script>
+
 </head>
 
-
 <body>
+
+    <script>
+        AFRAME.registerComponent("marker-distance", {
+
+            init: function () {
+
+                this.hy = document.querySelector('#hy')
+                this.ox = document.querySelector('#ox')
+                this.water = document.querySelector('#water')
+                this.marker1 = document.querySelector('#oxMarker')
+                this.marker2 = document.querySelector('#hyMarker')
+
+            },
+            tick: function () {
+                var marker1Pos, marker2Pos, markerDistance
+
+                marker1Pos = new THREE.Vector3();
+                this.marker1.object3D.getWorldPosition(marker1Pos);
+
+                marker2Pos = new THREE.Vector3();
+                this.marker2.object3D.getWorldPosition(marker2Pos);
+
+                markerDistance = marker1Pos.distanceTo(marker2Pos);
+
+                if (markerDistance < 2) {
+
+                    this.hy.setAttribute("visible", false)
+                    this.ox.setAttribute("visible", false)
+                    this.water.setAttribute("visible", true)
+
+                }
+                else {
+
+                    this.hy.setAttribute("visible", true)
+                    this.ox.setAttribute("visible", true)
+                    this.water.setAttribute("visible", false)
+
+                }
+            },
+        });
+
+    </script>
 
     <a-scene vr-mode-ui="enabled: false;"
              renderer="logarithmicDepthBuffer: true;"
@@ -25,17 +70,16 @@
 
         <!--Assets-->
         <a-assets>
-            <a-asset-item id="Ox" src="assets/oxygen1.gltf"></a-asset-item>
+            <a-asset-item id="ox" src="assets/oxygen1.gltf"></a-asset-item>
         </a-assets>
 
         <a-assets>
-            <a-asset-item id="Hy" src="assets/hydrogen1.gltf"></a-asset-item>
+            <a-asset-item id="hy" src="assets/hydrogen1.gltf"></a-asset-item>
         </a-assets>
 
         <a-assets>
-            <a-asset-item id="Water" src="assets/Water1.gltf"></a-asset-item>
+            <a-asset-item id="water" src="assets/Water1.gltf"></a-asset-item>
         </a-assets>
-
 
 
         <!--DPSD Marker-->
@@ -44,19 +88,9 @@
             <a-image src="assets/blue-butterfly.jpg" width="1.5" height="1.5" rotation="-90 0 0" position="0 0 0" visible="true"></a-image>
         </a-marker>
 
-
-        <!-- Water -->
-        <a-entity gltf-model="#Water"
-                  id="Water"
-                  scale="0.1 0.1 0.1"
-                  position=" 0 0 -1.5"
-                  animation__rotate="property: rotation; dur: 5000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;">
-        </a-entity>
-
         <!-- Oxygen Marker -->
         <a-marker preset="pattern" type="pattern" id="oxMarker" url="assets/pattern-card-O.patt">
-
-            <a-entity gltf-model="#Ox"
+            <a-entity gltf-model="#ox"
                       scale="0.1 0.1 0.1"
                       position="0 0 0"
                       animation__rotate="property: rotation; dur: 5000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;">
@@ -66,94 +100,30 @@
 
         <!-- Hydrogen Marker -->
         <a-marker preset="pattern" type="pattern" id="hyMarker" url="assets/pattern-card-H.patt">
-            <a-entity gltf-model="#Hy"
+            <a-entity gltf-model="#hy"
                       position=" 0 0 0"
                       scale="0.1 0.1 0.1"
                       animation__rotate="property: rotation; dur: 5000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;">
             </a-entity>
+
         </a-marker>
+
+
+
+        <!-- Water -->
+        <a-entity gltf-model="#water"
+                  id="water"
+                  scale="0.1 0.1 0.1"
+                  position=" 0 0 -1.5"
+                  animation__rotate="property: rotation; dur: 5000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;">
+        </a-entity>
+
 
         <a-entity marker-distance></a-entity>
 
         <a-entity camera></a-entity>
 
     </a-scene>
-
-    <script>
-
-        AFRAME.registerComponent("marker-distance", {
-
-            tick: function () {
-
-                this.markerDistance()
-            },
-
-            markerDistance: function () {
-
-
-                var marker1 = document.querySelector("#oxMarker")
-                var marker2 = document.querySelector("#hyMarker")
-
-                var marker1Pos, marker2Pos
-
-                marker1Pos = new THREE.Vector3();
-                marker1.object3D.getWorldPosition(marker1Pos);
-
-                marker2Pos = new THREE.Vector3();
-                marker2.object3D.getWorldPosition(marker2Pos);
-
-                //distance
-                var markerDistance = marker1Pos.distanceTo(marker2Pos);
-
-
-                var entity1 = document.querySelector('#Ox')
-                var entity2 = document.querySelector('#Hy')
-                var entity3 = document.querySelector('#Water')
-
-
-                if (marker1Pos.object3D.visible == true || marker2Pos.object3D.visible == true) {
-
-                    entity1.setAttribute('visible', true)
-                    entity2.setAttribute('visible', true)
-                    entity3.setAttribute('visible', false)
-
-                }
-
-                else if (marker1Pos.object3D.visible == true && marker2Pos.object3D.visible == true && markerDistance < 2) {
-
-                    entity1.setAttribute('visible', false)
-                    entity2.setAttribute('visible', false)
-                    entity3.setAttribute('visible', true)
-                }
-
-                else (marker1Pos.object3D.visible == false || marker2Pos.object3D.visible == false)
-                {
-
-                    entity3.setAttribute('visible', false)
-                }
-
-            }
-        });
-
-    </script>
-
-    <!--
-            if (markerDistance < 2) {
-
-                        entity1.setAttribute('visible', false)
-                        entity2.setAttribute('visible', false)
-                        entity3.setAttribute('visible', true)
-                    }
-
-
-                else {
-
-                        entity1.setAttribute('visible', true)
-                    entity2.setAttribute('visible', true)
-                    entity3.setAttribute('visible', false)
-
-                    }
-     -->
 
 
 </body>

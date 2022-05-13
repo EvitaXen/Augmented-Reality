@@ -26,8 +26,8 @@ Taking into account the percentage of the individual assignment in the final gra
 
 
 ## Deadlines
-- [deliverable 1](https://github.com/merkourisa/Augmented-Reality/issues/1): until 25/03/2022 
-- [deliverable 2](https://github.com/merkourisa/Augmented-Reality/issues/2): until 29/04/2022
+- [deliverable 1](https://github.com/merkourisa/Augmented-Reality/issues/1): until 04/04/2022 
+- [deliverable 2](https://github.com/merkourisa/Augmented-Reality/issues/2): until 13/05/2022
 - [deliverable 3](https://github.com/merkourisa/Augmented-Reality/issues/3): until 03/06/2022
 
 ## Report

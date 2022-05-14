@@ -18,7 +18,7 @@
 
 - Πρώτα έψαξα για τους [custom markers](https://www.oodlestechnologies.com/blogs/how-to-create-your-own-marker-for-ar-js/), και προσπάθησα να φτιάξω το **Dpsd pattern** με το [text](https://www.oodlestechnologies.com/blogs/how-to-create-your-own-marker-for-ar-js/), την [εικόνα](https://aframe.io/docs/1.3.0/primitives/a-image.html), και τα έκανα να είναι παράλληλα με την [οθόνη](https://aframe.io/docs/1.3.0/primitives/a-plane.html).
 - Στην συνέχεια κατέβασα το Βlender, έπειτα έκανα το **οξυγόνο και υδρογόνο** με αυτό το [tutorial](https://www.youtube.com/watch?v=hGdU3GgbTMY). Ενώ το **νερό** προσπάθησα να το φτιάξω από [εδώ](https://www.youtube.com/watch?v=8wB265I_MH0). 
-- ###### Με την σειρά, το υδρογόνο, το οξυγόνο και το νερό. 
+###### Με την σειρά, το υδρογόνο, το οξυγόνο και το νερό. 
 <img src="https://user-images.githubusercontent.com/101424559/168422982-f36a0fbc-7c9f-4e34-acd7-d9f80efad06a.png" width="180" height="160">
 <img src="https://user-images.githubusercontent.com/101424559/168423006-a7ea0890-73f2-41fd-9242-f75c5e5755aa.png" width="180" height="160">
 <img src="https://user-images.githubusercontent.com/101424559/168422765-91eed3da-8bda-4d14-a38b-10b0fa61f43e.png" width="300" height="160">

@@ -44,7 +44,7 @@
 
 <img src= "https://user-images.githubusercontent.com/101424559/170280485-381b5845-d1a2-4a7f-b6ee-115644654fc0.png" width="250" height="250">
 
--Για το τρίτο βήμα, κατέβασα μία φωτογραφία από [εδώ](https://www.greecevacationsearch.com/el/%CF%80%CE%B1%CF%81%CE%B1%CE%BB%CE%B9%CE%B1/%CE%9A%CF%8C%CE%BA%CE%BA%CE%B9%CE%BD%CE%B1/%CE%A3%CF%8D%CF%81%CE%BF%CF%82) με την παραλία Κόκκινα.Έβαλα την εικόνα σε [plane](https://aframe.io/docs/1.3.0/primitives/a-plane.html) για να την προσαρμόσω στο scene.Ενώ από το Google maps βρήκα τις συντεταγμένες.
+- Για το τρίτο βήμα, κατέβασα μία φωτογραφία από [εδώ](https://www.greecevacationsearch.com/el/%CF%80%CE%B1%CF%81%CE%B1%CE%BB%CE%B9%CE%B1/%CE%9A%CF%8C%CE%BA%CE%BA%CE%B9%CE%BD%CE%B1/%CE%A3%CF%8D%CF%81%CE%BF%CF%82) με την παραλία Κόκκινα. Έβαλα την εικόνα σε [plane](https://aframe.io/docs/1.3.0/primitives/a-plane.html) για να την προσαρμόσω στο scene. Ενώ από το Google maps βρήκα τις συντεταγμένες.
 
 ![image](https://user-images.githubusercontent.com/101424559/170315984-c1516b88-055b-431f-816d-b412efab126b.png)
 

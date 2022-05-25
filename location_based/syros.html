@@ -11,15 +11,22 @@
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
-    <a-scene
-        vr-mode-ui="enabled: false"
-		embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+    <a-scene vr-mode-ui="enabled: false"
+             embedded
+             arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 
-        <a-entity gps-entity-place="latitude: 44.4908615; longitude: 11.3326416;" gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" animation-mixer scale="0.15 0.15 0.15"/>
+        <a-assets>
+            <img id="kokkina" src="assets/Kokkina.jpg">
+        </a-assets>
+
+        <a-entity gps-entity-place="latitude: 36.34740; longitude:25.39566;">
+            <a-image src="#kokkina" position="0 1 -6" height="2" width="2" rotation="-5 0 0"></a-image>
+        </a-entity>
         
-        
-        
-        <a-camera gps-camera rotation-reader></a-camera>
-	</a-scene>
+ <a-camera rotation-reader gps-camera="simulateLatitude: 36.34740; simulateLongitude:25.39566;"> </a-camera>
+
+</a-scene>
+
 </body>
+
+</html>

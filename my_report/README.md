@@ -30,6 +30,19 @@
 - Αφότου έφτιαξα και τα patterns του υδρογόνου και του οξυγόνου. Για να βάλω τα animation να εμφανίζονται από τους custom markers χρησιμοποίησα τον κώδικα που βρήκα μέσω [A-frame](https://aframe.io/blog/arjs/)
 - **Για το τρίτο βήμα**. Πήρα τον κώδικα για την [απόσταση των δύο markers](https://stackoverflow.com/questions/61239107/how-to-get-marker-position-x-y-ar-js). Βρήκα από το [Α-frame](https://aframe.io/docs/1.3.0/core/entity.html#properties) και από [εδώ](https://stackoverflow.com/questions/67578125/a-frame-show-gltf-model-if-variable-has-a-certain-value), πως να "καλώ" τις entities και να διαχειριστώ το "visibility". Και τέλος τοποθέτησα το script, [με αυτές τις οδηγίες](https://aframe.io/docs/0.8.0/introduction/writing-a-component.html), εν τέλη δεν δούλεψε αλλά δεν βρήκα το γιατί.
 
+# 3nd Deliverable
+
+- Πρώτα, έψαξα και κατέβασα τον πύργο του Άιφελ σε .gltf αρχείο από αυτό το [site](https://sketchfab.com/tags/eiffeltower). Και βρήκα τις γεωγραφικές συντεταγμένες της Γαλλίας απ'το Google.
+<img src="https://user-images.githubusercontent.com/101424559/170276776-e293fc52-a5cc-4737-bc2d-74f8d5be790f.png" width="340" height="100">
+
+- Στην συνέχεια, τις εισήγαγα στο gps-entity-place που βρήκα μέσω [A-frame](https://aframe.io/blog/arjs3/). Μέσα στο entity που περιέχει το .gltf μοντέλο και άλλαξα και τις συντεταγμένες στο gps-camera ώστε να εμφανίζεται το animation.
+
+![image](https://user-images.githubusercontent.com/101424559/170278500-639a4d95-c5ab-43f3-8a0d-bf6b7f56bcf1.png)
+![image](https://user-images.githubusercontent.com/101424559/170278550-571869ab-e9a3-4796-a29d-bd2ffbe8b129.png)
+
+- Έπειτα, τροποποιήσα τον κώδικα μου με την βοήθεια [αυτόυ του παραδείγματος](https://glitch.com/~salty-partner-1), ώστε όταν κάνετε κλικ στο animation, να εμφανίζεται το [text](https://aframe.io/docs/1.3.0/components/text.html#fonts2_kelsonsans).
+
+<img src= "https://user-images.githubusercontent.com/101424559/170280485-381b5845-d1a2-4a7f-b6ee-115644654fc0.png" width="250" height="250">
 
 # Conclusions
 

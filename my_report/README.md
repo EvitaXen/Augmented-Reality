@@ -37,8 +37,8 @@
 
 - Στην συνέχεια, τις εισήγαγα στο gps-entity-place που βρήκα μέσω [A-frame](https://aframe.io/blog/arjs3/). Μέσα στο entity που περιέχει το .gltf μοντέλο και άλλαξα και τις συντεταγμένες στο gps-camera ώστε να εμφανίζεται το animation.
 
-![image](https://user-images.githubusercontent.com/101424559/170278500-639a4d95-c5ab-43f3-8a0d-bf6b7f56bcf1.png)
-![image](https://user-images.githubusercontent.com/101424559/170278550-571869ab-e9a3-4796-a29d-bd2ffbe8b129.png)
+![image](https://user-images.githubusercontent.com/101424559/170736172-73a4fc02-e99c-41cb-92db-97d311b835a1.png)
+![image](https://user-images.githubusercontent.com/101424559/170736101-f9013ceb-88a4-4a3f-9f88-f299c6e518fb.png)
 
 - Έπειτα, τροποποιήσα τον κώδικα μου με την βοήθεια [αυτόυ του παραδείγματος](https://glitch.com/~salty-partner-1), ώστε όταν κάνετε κλικ στο animation, να εμφανίζεται το [text](https://aframe.io/docs/1.3.0/components/text.html#fonts2_kelsonsans).
 

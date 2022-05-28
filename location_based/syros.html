@@ -15,13 +15,11 @@
              embedded
              arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 
-        <a-assets>
-            <img id="kokkina" src="assets/Kokkina.jpg">
-        </a-assets>
-        
- <a-image src="#kokkina" position="0 1 -6" height="2" width="2" gps-entity-place="latitude:37.39604360380672; longitude: 24.870440392588254" rotation="-5 0 0"></a-image>
-        
- <a-camera rotation-reader gps-camera> </a-camera>
+ <a-image gps-entity-place="latitude:37.39604360380672; longitude: 24.870440392588254" look-at="[gps-camera]" src="assets/Kokkina.jpg" position="0 1 -6" height="2" width="2" rotation="-5 0 0"></a-image>
+
+ <a-camera rotation-reader gps-camera>
+
+ </a-camera>
 
 </a-scene>
 

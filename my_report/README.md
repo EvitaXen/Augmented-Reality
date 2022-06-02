@@ -48,6 +48,13 @@
 
 ![image](https://user-images.githubusercontent.com/101424559/170315984-c1516b88-055b-431f-816d-b412efab126b.png)
 
+
+- Επειδή δεν μπορούσα να φτιάξω το position, μετέτρεψα την εικόνα σε gltf μοντέλο. Και έβαλα το gps-entity-place έτσι ώστε όταν πηγαίνεις σε εκείνη την περιοχή να εμφανίζεται η εικόνα.
+
+![123445](https://user-images.githubusercontent.com/101424559/171712333-b344db3a-e773-41d3-b64d-48eb32aa23c2.png)
+
+
+
 # Conclusions
 
 
